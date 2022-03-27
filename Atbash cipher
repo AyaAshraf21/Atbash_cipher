@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cctype>
+#include <string>
+using namespace std;
+int main (){
+   string name , sum ;
+   char chr ;
+   cout<<"please enter name that you want to encoded it : "<<endl;
+   getline (cin,name);
+    
+   for (int j = 0 ; j < name.length() ; j++){
+       if (name[j] == ' '){
+           chr = ' ';
+       }
+      else { 
+           char n = toupper (name[j]);
+           if (n == name[j] ){
+                chr = char (155 - int(name[j]));
+           }
+      
+           else {
+               chr = char (219 - int (name[j]));
+           }
+      }
+       
+       sum += chr ;
+       
+   }
+   cout<<sum;
+}
